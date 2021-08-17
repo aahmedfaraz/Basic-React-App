@@ -1,4 +1,4 @@
-import react, {Fragment} from 'react';
+import {Fragment} from 'react';
 import reactDom from 'react-dom';
 import './index.css';
 
