@@ -15,6 +15,7 @@ function App() {
         <h1>
           <a href="https://github.com/aahmedfaraz">Ahmed Faraz</a>
         </h1>
+        <small>This is updated</small>
         <a
           className="App-link"
           href="https://reactjs.org"
