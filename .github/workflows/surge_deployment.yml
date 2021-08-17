@@ -30,6 +30,7 @@ jobs:
         cmd: install # will run `yarn install` command
     
     - run: npx browserslist@latest --update-db
+    - run: yarn add -W caniuse-lite
         
     - name: Build React App
       run: yarn build
