@@ -1,0 +1,33 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deployment of react app to surge
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  # Job 1 BUILD
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Install Node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: 12
+        
+      - name: Install Yarn
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install # will run `yarn install` command
+          
+      - name: Build React App
+        run: yarn build
+      
+      - name: Install Surge
+        run: npm install surge --global
+        
+      - name: Deploy to Surge
+        run: surge ./build https://bootcamp2020_task2_ahmedfaraz.surge.sh --token ${{secrets.SECRET_SURGE_TOKEN}}
