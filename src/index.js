@@ -1,17 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import react, {Fragment} from 'react';
+import reactDom from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function Hi({name, link}) {
+  return (
+    <Fragment>
+      <h1>BOOTCAMP 2020 | BASIC REACT APP</h1>
+      <h2>Hello <a href={link} target="_blank" rel="noreferrer"><strong>{name}</strong></a></h2>
+      <ul>
+        <li>List Items</li>
+        <li>List Items</li>
+        <li>List Items</li>
+      </ul>
+      <ol>
+        <li>List Items</li>
+        <li>List Items</li>
+        <li>List Items</li>
+        <li>List Items</li>
+      </ol>
+    </Fragment>
+  )
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reactDom.render(<Hi name="Ahmed Faraz" link="https://github.com/aahmedfaraz" />, document.querySelector('#root'));
