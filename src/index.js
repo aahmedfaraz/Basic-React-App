@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import reactDom from 'react-dom';
 import GlobalState from './context/global/GlobalState';
 import Main from './Main';
