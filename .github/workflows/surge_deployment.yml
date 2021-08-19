@@ -20,7 +20,13 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     
-    - uses: egordm/gha-yarn-node-cache@v1
+    - name: Install NodeJS
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: 12
+          
+    - name: Install yarn
+      run: npm install --global yarn
 
     - name: Install JS dependencies
       run: yarn install
